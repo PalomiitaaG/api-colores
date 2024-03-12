@@ -10,7 +10,7 @@ servidor.use(cors());
 servidor.use(json()); //cualquier cosa que venga en json sera interceptada.
 
 //para cuando quiero hacer las pruebas de si el servidor funciona creamos una carpeta con un index que en el script hacemos las pruebas de fech. Que le damos una direccion para poner en la URL y le ponemos cual carpeta abrimos
-servidor.use("/mentirillas", express.static("./pruebas"));
+//servidor.use("/mentirillas", express.static("./pruebas"));
 
 servidor.get("/colores", async (peticion,respuesta) => {
     try{
@@ -29,7 +29,7 @@ servidor.get("/colores", async (peticion,respuesta) => {
 
 servidor.post("/colores/nuevo",async (peticion,respuesta,siguiente) => {
     //console.log(peticion.body);
-    let {r,g,b} = peticion.body;
+    let {r,g,b} = peticion.body; //extra del cuerpo de peticion r,g,b
 
     let valido = true;
 
